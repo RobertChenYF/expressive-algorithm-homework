@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7774056764528314490}
   m_Layer: 8
   m_Name: Creature Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,12 +154,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24cd174e2fa23e48bda0ee0821692c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
   energy: 1
-  size: 0
+  SenseCircleSize: 1
   senseCircle: {fileID: 7774056764764351794}
   rigidbodyOfCreature: {fileID: 7774056764528314490}
   creatureBody: {fileID: 7774056764528314756}
   creature: {fileID: 7774056764528314489}
+  justSpawned: 1
+  detectionCycle: {fileID: 7774056763326534170}
+  currentGeneration: 1
 --- !u!50 &7774056764528314490
 Rigidbody2D:
   serializedVersion: 4
