@@ -52,7 +52,7 @@ public class CreatureController : MonoBehaviour
     {
 
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             if (foodFound >= 2)
             {
@@ -83,7 +83,7 @@ public class CreatureController : MonoBehaviour
         if (EnvironmentController.Daytime == true)
         {
             justSpawned = false;
-
+            
             if (targetFood == null && BackHome == false)
             {//wandering
                 transform.up = upFromLastFrame;
@@ -103,7 +103,7 @@ public class CreatureController : MonoBehaviour
                 transform.up = targetFood.transform.position - transform.position; 
                 rigidbodyOfCreature.velocity = transform.up * currentSpeed;
             }
-         if ((((foodFound >= 2) || ((foodFound == 1) && EnvironmentController.dayTimeTimer < 4))) && (Vector2.Distance(home, transform.position) > 0.1f))
+         if ((((foodFound >= 2) || ((foodFound == 1) && EnvironmentController.dayTimeTimer- (Vector2.Distance(transform.position, home)) / speed < 1))) && (Vector2.Distance(home, transform.position) > 0.1f))
         {
             //go back to home
             BackHome = true;
